@@ -62,7 +62,7 @@ const summarizeInstructionsFlow = ai.defineFlow(
         if (e.message.includes('503') && retries > 1) {
           retries--;
           // Wait for a second before retrying
-          await new Promise(resolve => setTimeout(resolve, 1000)); 
+          await new Promise(resolve => setTimeout(resolve, 1000));
           continue;
         }
         throw e;
