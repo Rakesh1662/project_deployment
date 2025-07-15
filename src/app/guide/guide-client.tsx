@@ -44,7 +44,7 @@ const DeploymentGuide: FC<{ guide: Guide }> = ({ guide }) => (
               alt={step.title}
               width={800}
               height={400}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain"
               data-ai-hint={step.imageHint}
             />
           </div>
