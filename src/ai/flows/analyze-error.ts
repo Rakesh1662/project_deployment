@@ -54,7 +54,6 @@ const analyzeErrorFlow = ai.defineFlow(
   },
   async (input) => {
     let retries = 3;
-    let lastError: any;
     while (retries > 0) {
       try {
         const {output} = await prompt(input);
@@ -63,14 +62,13 @@ const analyzeErrorFlow = ai.defineFlow(
         }
         throw new Error('No output from AI model');
       } catch (e: any) {
-        lastError = e;
         if (e.message.includes('503') && retries > 1) {
           retries--;
           // Exponential backoff: 1s, 2s
           await new Promise(resolve => setTimeout(resolve, 1000 * (3 - retries)));
         } else {
-          // For non-503 errors or last retry, throw immediately
-          throw e;
+          // For non-503 errors or last retry, stop retrying.
+          retries = 0;
         }
       }
     }
