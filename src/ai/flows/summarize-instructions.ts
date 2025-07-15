@@ -57,12 +57,15 @@ const summarizeInstructionsFlow = ai.defineFlow(
     while (retries > 0) {
       try {
         const {output} = await prompt(input);
-        return output!;
+        if (!output) {
+          throw new Error('No output from AI model');
+        }
+        return output;
       } catch (e: any) {
         if (e.message.includes('503') && retries > 1) {
           retries--;
           // Wait for a second before retrying
-          await new Promise(resolve => setTimeout(resolve, 1000));
+          await new Promise(resolve => setTimeout(resolve, 1000 * (4-retries)));
           continue;
         }
         throw e;
@@ -70,6 +73,6 @@ const summarizeInstructionsFlow = ai.defineFlow(
     }
     // This part should ideally not be reached if retries are handled correctly,
     // but it's here as a fallback.
-    throw new Error('AI model is overloaded. Please try again later.');
+    return { summary: 'The AI model is currently overloaded. Please try again in a few moments.' };
   }
 );
