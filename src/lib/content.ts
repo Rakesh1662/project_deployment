@@ -98,7 +98,7 @@ export const netlifyGuide: Guide = {
     {
       title: 'Step 3: Add API Keys (Crucial Step)',
       description: 'Pick the GitHub repository. Before deploying, go to "Site configuration" > "Build & deploy" > "Environment variables". Add your API key here, like `GOOGLEAI_API_KEY`, to keep it secure.',
-      imageSrc: '/netlify_deploy.png',
+      imageSrc: '/netlify_deploy.jpg',
       imageHint: 'api keys',
     },
     {
