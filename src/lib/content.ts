@@ -6,7 +6,7 @@ export type Step = {
 };
 
 export type Guide = {
-  title: string;
+  title:string;
   description: string;
   steps: Step[];
 };
@@ -24,25 +24,25 @@ export const githubGuide: Guide = {
     {
       title: 'Step 1: Initialize Git',
       description: 'If you haven\'t already, open a terminal in your project directory and run `git init` to create a new Git repository.',
-      imageSrc: '/guides/github/step1.png',
+      imageSrc: 'https://placehold.co/800x400.png',
       imageHint: 'terminal code',
     },
     {
       title: 'Step 2: Create a GitHub Repository',
       description: 'Go to GitHub and create a new, empty repository. Do not initialize it with a README, .gitignore, or license.',
-      imageSrc: '/guides/github/step2.png',
+      imageSrc: 'https://placehold.co/800x400.png',
       imageHint: 'github repository',
     },
     {
       title: 'Step 3: Connect to GitHub',
       description: 'Copy the remote URL from your new GitHub repository. In your terminal, run `git remote add origin <your-repo-url>` to link your local repository to the one on GitHub.',
-      imageSrc: '/guides/github/step3.png',
+      imageSrc: 'https://placehold.co/800x400.png',
       imageHint: 'code snippet',
     },
     {
       title: 'Step 4: Commit and Push',
       description: 'Add your files, commit them, and push to GitHub using the following commands: `git add .`, `git commit -m "Initial commit"`, and `git push -u origin main` (or `master`). Your API keys will NOT be uploaded.',
-      imageSrc: '/guides/github/step4.png',
+      imageSrc: 'https://placehold.co/800x400.png',
       imageHint: 'command line',
     },
   ],
@@ -55,25 +55,25 @@ export const vercelGuide: Guide = {
     {
       title: 'Step 1: Sign Up and Connect GitHub',
       description: 'Create a Vercel account and connect it to your GitHub account.',
-      imageSrc: '/guides/vercel/step1.png',
+      imageSrc: 'https://placehold.co/800x400.png',
       imageHint: 'vercel dashboard',
     },
     {
       title: 'Step 2: Import Your Project',
       description: 'From the Vercel dashboard, click "Add New... > Project". Select your GitHub repository.',
-      imageSrc: '/guides/vercel/step2.png',
+      imageSrc: 'https://placehold.co/800x400.png',
       imageHint: 'import project',
     },
     {
       title: 'Step 3: Add API Keys (Crucial Step)',
       description: 'In the project configuration, expand the "Environment Variables" section. Add a new variable for your API key, such as `GOOGLEAI_API_KEY`, and paste your secret key in the value field. This keeps it secure.',
-      imageSrc: '/guides/vercel/step3.png',
+      imageSrc: 'https://placehold.co/800x400.png',
       imageHint: 'environment variables',
     },
     {
       title: 'Step 4: Deploy',
       description: 'Vercel will automatically detect that it\'s a Next.js app. Click "Deploy". Vercel will build and deploy your project. Once complete, you\'ll get a URL to your live site. Congratulations!',
-      imageSrc: '/guides/vercel/step4.png',
+      imageSrc: 'https://placehold.co/800x400.png',
       imageHint: 'celebration success',
     },
   ],
@@ -86,25 +86,25 @@ export const netlifyGuide: Guide = {
     {
       title: 'Step 1: Connect to GitHub',
       description: 'Sign up for a Netlify account and authorize it to access your GitHub repositories.',
-      imageSrc: '/guides/netlify/step1.png',
+      imageSrc: 'https://placehold.co/800x400.png',
       imageHint: 'netlify dashboard',
     },
     {
       title: 'Step 2: Add New Site',
       description: 'From your Netlify dashboard, click "Add new site > Import an existing project" and choose GitHub as your provider.',
-      imageSrc: '/guides/netlify/step2.png',
+      imageSrc: 'https://placehold.co/800x400.png',
       imageHint: 'import repository',
     },
     {
       title: 'Step 3: Add API Keys (Crucial Step)',
       description: 'Pick the GitHub repository. Before deploying, go to "Site configuration" > "Build & deploy" > "Environment variables". Add your API key here, like `GOOGLEAI_API_KEY`, to keep it secure.',
-      imageSrc: '/guides/netlify/step3.png',
+      imageSrc: 'https://placehold.co/800x400.png',
       imageHint: 'api keys',
     },
     {
       title: 'Step 4: Deploy Site',
       description: 'Click "Deploy site". Netlify will handle the build process using your settings and provide you with a live URL upon completion.',
-      imageSrc: '/guides/netlify/step4.png',
+      imageSrc: 'https://placehold.co/800x400.png',
       imageHint: 'success confetti',
     },
   ],
@@ -117,25 +117,25 @@ export const renderGuide: Guide = {
     {
       title: 'Step 1: Create a New Web Service',
       description: 'Sign up for Render. From the dashboard, click "New + > Web Service".',
-      imageSrc: '/guides/render/step1.png',
+      imageSrc: 'https://placehold.co/800x400.png',
       imageHint: 'render dashboard',
     },
     {
       title: 'Step 2: Connect Your Repository',
       description: 'Connect your GitHub account and select the repository you want to deploy.',
-      imageSrc: '/guides/render/step2.png',
+      imageSrc: 'https://placehold.co/800x400.png',
       imageHint: 'connect github',
     },
     {
       title: 'Step 3: Add API Keys (Crucial Step)',
       description: 'In the service configuration, navigate to the "Environment" section. Click "Add Environment Variable" to add your keys, such as `GOOGLEAI_API_KEY`. This is vital for security.',
-      imageSrc: '/guides/render/step3.png',
+      imageSrc: 'https://placehold.co/800x400.png',
       imageHint: 'secret keys',
     },
     {
       title: 'Step 4: Configure and Create Web Service',
       description: 'Give your service a name, set Build Command to `npm run build` and Start Command to `npm run start`. Click "Create Web Service". Render will start the deployment, and your site will be live shortly.',
-      imageSrc: '/guides/render/step4.png',
+      imageSrc: 'https://placehold.co/800x400.png',
       imageHint: 'celebration rocket',
     },
   ],
