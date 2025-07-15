@@ -53,7 +53,23 @@ const analyzeErrorFlow = ai.defineFlow(
     outputSchema: AnalyzeErrorOutputSchema,
   },
   async (input) => {
-    const {output} = await prompt(input);
-    return output!;
+    let retries = 3;
+    while (retries > 0) {
+      try {
+        const {output} = await prompt(input);
+        return output!;
+      } catch (e: any) {
+        if (e.message.includes('503') && retries > 1) {
+          retries--;
+          // Wait for a second before retrying
+          await new Promise(resolve => setTimeout(resolve, 1000)); 
+          continue;
+        }
+        throw e;
+      }
+    }
+    // This part should ideally not be reached if retries are handled correctly,
+    // but it's here as a fallback.
+    throw new Error('AI model is overloaded. Please try again later.');
   }
 );
