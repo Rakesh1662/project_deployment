@@ -42,8 +42,8 @@ const DeploymentGuide: FC<{ guide: Guide }> = ({ guide }) => (
             <Image
               src={step.imageSrc}
               alt={step.title}
-              width={800}
-              height={400}
+              width={1280}
+              height={720}
               className="w-full h-full object-contain"
               data-ai-hint={step.imageHint}
             />
