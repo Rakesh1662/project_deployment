@@ -66,8 +66,10 @@ const summarizeInstructionsFlow = ai.defineFlow(
         lastError = e;
         if (e.message.includes('503') && retries > 1) {
           retries--;
-          await new Promise(resolve => setTimeout(resolve, 1000 * (3 - retries)));
+          // Exponential backoff: 1s, 2s
+          await new Promise(resolve => setTimeout(resolve, 1000 * (3 - retries))); 
         } else {
+          // For non-503 errors or last retry, throw immediately
           throw e;
         }
       }
