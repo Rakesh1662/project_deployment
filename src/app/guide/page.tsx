@@ -12,7 +12,11 @@ export default function GuidePage() {
             <DeployWaveIcon className="w-8 h-8 text-primary" />
             <span>DeployWave</span>
           </Link>
-          <span className="text-sm text-muted-foreground">by Next Wave</span>
+          <nav>
+            <a href="#error-analyzer" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              Help
+            </a>
+          </nav>
         </div>
       </header>
       <main className="container mx-auto px-4 py-8">
@@ -26,6 +30,9 @@ export default function GuidePage() {
         </Card>
         <GuideClient />
       </main>
+      <footer className="container mx-auto px-4 py-8 text-center text-sm text-muted-foreground">
+        <p>A Next Wave Company</p>
+      </footer>
     </div>
   );
 }
