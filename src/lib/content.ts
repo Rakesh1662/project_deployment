@@ -11,6 +11,12 @@ export type Guide = {
   steps: Step[];
 };
 
+export const securityNote = {
+  title: 'Important: Keeping Your API Keys Safe',
+  description: "You'll notice we add API keys on the deployment platform, not in the code. Here's why:",
+  content: "Your GitHub repository, especially if public, can be seen by anyone. Committing API keys to your repository would expose them to the world. Malicious actors could steal your keys and use your accounts, leading to unexpected charges or abuse of services. By using environment variables on deployment platforms like Vercel, Netlify, or Render, your keys remain secret. They are securely injected into your application only when it's being built and run on the server, never appearing in your public code.",
+};
+
 export const githubGuide: Guide = {
   title: 'From Firebase to GitHub',
   description: 'First, let\'s get your code into a GitHub repository. This is a crucial step for continuous deployment.',
@@ -35,7 +41,7 @@ export const githubGuide: Guide = {
     },
     {
       title: 'Step 4: Commit and Push',
-      description: 'Add your files, commit them, and push to GitHub using the following commands: `git add .`, `git commit -m "Initial commit"`, and `git push -u origin main` (or `master`).',
+      description: 'Add your files, commit them, and push to GitHub using the following commands: `git add .`, `git commit -m "Initial commit"`, and `git push -u origin main` (or `master`). Your API keys will NOT be uploaded.',
       imageSrc: 'https://placehold.co/800x400.png',
       imageHint: 'command line',
     },
@@ -59,8 +65,8 @@ export const vercelGuide: Guide = {
       imageHint: 'import project',
     },
     {
-      title: 'Step 3: Add API Keys',
-      description: 'In the project configuration, expand the "Environment Variables" section. Add a new variable for your API key, such as `GOOGLEAI_API_KEY`, and paste your key in the value field.',
+      title: 'Step 3: Add API Keys (Crucial Step)',
+      description: 'In the project configuration, expand the "Environment Variables" section. Add a new variable for your API key, such as `GOOGLEAI_API_KEY`, and paste your secret key in the value field. This keeps it secure.',
       imageSrc: 'https://placehold.co/800x400.png',
       imageHint: 'environment variables',
     },
@@ -90,8 +96,8 @@ export const netlifyGuide: Guide = {
       imageHint: 'import repository',
     },
     {
-      title: 'Step 3: Select Repository and Add API Keys',
-      description: 'Pick the GitHub repository. Before deploying, go to "Site configuration" > "Build & deploy" > "Environment variables". Add your API key here, like `GOOGLEAI_API_KEY`.',
+      title: 'Step 3: Add API Keys (Crucial Step)',
+      description: 'Pick the GitHub repository. Before deploying, go to "Site configuration" > "Build & deploy" > "Environment variables". Add your API key here, like `GOOGLEAI_API_KEY`, to keep it secure.',
       imageSrc: 'https://placehold.co/800x400.png',
       imageHint: 'api keys',
     },
@@ -121,8 +127,8 @@ export const renderGuide: Guide = {
       imageHint: 'connect github',
     },
     {
-      title: 'Step 3: Add API Keys',
-      description: 'In the service configuration, navigate to the "Environment" section. Click "Add Environment Variable" to add your keys, such as `GOOGLEAI_API_KEY`.',
+      title: 'Step 3: Add API Keys (Crucial Step)',
+      description: 'In the service configuration, navigate to the "Environment" section. Click "Add Environment Variable" to add your keys, such as `GOOGLEAI_API_KEY`. This is vital for security.',
       imageSrc: 'https://placehold.co/800x400.png',
       imageHint: 'secret keys',
     },

@@ -7,10 +7,11 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
-import { githubGuide, deploymentGuides, type Guide } from '@/lib/content';
+import { githubGuide, deploymentGuides, type Guide, securityNote } from '@/lib/content';
 import { cn } from '@/lib/utils';
 import { Terminal, UploadCloud, Rocket, GitBranch, Sparkles, User, Users, BrainCircuit, Loader2 } from 'lucide-react';
 import type { SkillLevel } from '@/ai/flows/summarize-instructions';
+import { ImportantNote } from '@/components/important-note';
 
 const platformIcons = {
   vercel: <UploadCloud className="w-6 h-6" />,
@@ -90,6 +91,12 @@ export function GuideClient() {
             <DeploymentGuide guide={githubGuide} />
           </CardContent>
         </Card>
+
+        <ImportantNote
+          title={securityNote.title}
+          description={securityNote.description}
+          content={securityNote.content}
+        />
 
         <Card className="shadow-lg" id="deployment-platforms">
           <CardHeader>
